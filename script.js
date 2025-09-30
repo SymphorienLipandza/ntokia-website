@@ -84,17 +84,38 @@ if (testimonials.length > 0) {
 }
 
 // ===============================
-// Contact Form Submission (dummy example)
+// Contact Form Submission with Formspree
 // ===============================
 const contactForm = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formMsg.textContent = "Merci ! Votre message a été envoyé.";
-    formMsg.style.color = "green";
-    contactForm.reset();
+
+    formMsg.textContent = "Envoi en cours...";
+    formMsg.style.color = "blue";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formMsg.textContent = "Merci ! Votre message a été envoyé.";
+        formMsg.style.color = "green";
+        contactForm.reset();
+      } else {
+        formMsg.textContent = "Oups ! Une erreur s'est produite. Réessayez.";
+        formMsg.style.color = "red";
+      }
+    } catch (error) {
+      formMsg.textContent = "Erreur réseau. Vérifiez votre connexion.";
+      formMsg.style.color = "red";
+    }
   });
 }
+
 
