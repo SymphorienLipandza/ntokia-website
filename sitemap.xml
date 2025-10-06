@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourdomain.com/</loc>
-    <lastmod>2025-10-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://ntokia.netlify.app/</loc>
+    <lastmod>2025-10-06</lastmod>dir 
     <priority>1.0</priority>
   </url>
-  <!-- Add more <url> entries for other pages -->
+  <url>
+    <loc>https://ntokia.netlify.app/#about</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ntokia.netlify.app/#services</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ntokia.netlify.app/#portfolio</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ntokia.netlify.app/#contact</loc>
+    <lastmod>2025-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

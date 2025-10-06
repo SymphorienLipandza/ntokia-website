@@ -1,1 +1,8 @@
-sitemap:ntokia.netlify.app/sitemap.xml
+# Redirect all traffic to HTTPS
+http://ntokia.netlify.app/*  https://ntokia.netlify.app/:splat  301!
+
+# Example redirect (old → new)
+# /old-services  /services  301
+
+# SPA support (optional, if using JS router)
+# /*  /index.html  200

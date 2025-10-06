@@ -18,18 +18,98 @@
   <meta name="msapplication-TileColor" content="#2a74b6">
   <meta name="theme-color" content="#2a74b6">
   <meta name="robots" content="index, follow">
+  <meta name="msapplication-TileColor" content="#2a74b6">
+  <meta name="msapplication-TileImage" content="images/android-chrome-512x512.png">
   <meta name="google-site-verification" content="VOTRE_CODE_DE_VERIFICATION_ICI">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.ntokia.com/sitemap.xml">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="icon" type="image/png" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="manifest" href="images/site.webmanifest" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="android-chrome" href="images/android-chrome-192x192.png">
   <link rel="android-chrome" href="images/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
   <title>NTOKIA - Service de confiance</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ntokia.netlify.app/#organization",
+        "name": "NTOKIA Web Agency",
+        "url": "https://ntokia.netlify.app",
+        "logo": "https://ntokia.netlify.app/images/NTOKIA.png",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61581259742935",
+          "https://www.linkedin.com/in/yourprofile",
+          "https://twitter.com/yourhandle",
+          "https://github.com/yourusername"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+216 24 657 692",
+            "contactType": "Customer Service",
+            "areaServed": "TN"
+          }
+        ],
+        "description": "NTOKIA is a modern web agency focused on building smart, responsive websites and digital solutions for businesses.",
+        "founder": "Your Name",
+        "foundingDate": "2025-10-01",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tunisia",
+          "addressCountry": "TN"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ntokia.netlify.app/#website",
+        "url": "https://ntokia.netlify.app",
+        "name": "NTOKIA Web Agency",
+        "publisher": {
+          "@id": "https://ntokia.netlify.app/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ntokia.netlify.app/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://ntokia.netlify.app/#localbusiness",
+        "name": "NTOKIA Web Agency",
+        "image": "https://ntokia.netlify.app/images/NTOKIA.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "10 rue Ibn Toufail, Megrine",
+          "addressLocality": "Tunis",
+          "addressRegion": "Ben Arous",
+          "postalCode": "2034",
+          "addressCountry": "TN"
+        },
+        "telephone": "+216 24 657 692",
+        "priceRange": "$$",
+        "url": "https://ntokia.netlify.app"
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
   <header class="site-header">
