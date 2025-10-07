@@ -1,12 +1,10 @@
 // Name of the cache
 const CACHE_NAME = "ntokia-cache";
 
-// Files to cache on install (rarely changing files)
+// Files to cache on install (rarely changing)
 const STATIC_ASSETS = [
   "/",
   "/index.html",
-  "/styles.css",
-  "/script.js",
   "/images/NTOKIA.png",
   "/images/favicon-32x32.png",
   "/images/favicon-16x16.png",
@@ -35,13 +33,18 @@ self.addEventListener("activate", event => {
 // Fetch event
 self.addEventListener("fetch", event => {
   const requestUrl = new URL(event.request.url);
+  const pathname = requestUrl.pathname;
 
-  // Network-first strategy for images (always get latest)
-  if (requestUrl.pathname.startsWith("/images/")) {
+  // Network-first strategy for images, CSS, and JS
+  if (
+    pathname.startsWith("/images/") ||
+    pathname.endsWith(".css") ||
+    pathname.endsWith(".js")
+  ) {
     event.respondWith(
       fetch(event.request)
         .then(networkResponse => {
-          // Update the cache with the new image
+          // Update cache with the latest file
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse.clone()));
           return networkResponse;
         })
@@ -55,7 +58,6 @@ self.addEventListener("fetch", event => {
     caches.match(event.request)
       .then(response => response || fetch(event.request))
       .catch(() => {
-        // fallback to index.html if offline and request is document
         if (event.request.destination === "document") {
           return caches.match("/index.html");
         }
