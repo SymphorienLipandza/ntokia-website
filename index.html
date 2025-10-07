@@ -18,9 +18,10 @@
   <meta name="msapplication-TileColor" content="#2a74b6">
   <meta name="theme-color" content="#2a74b6">
   <meta name="robots" content="index, follow">
-  <meta name="msapplication-TileColor" content="#2a74b6">
   <meta name="msapplication-TileImage" content="images/android-chrome-512x512.png">
   <meta name="google-site-verification" content="VOTRE_CODE_DE_VERIFICATION_ICI">
+
+  <!-- Favicons & Manifest -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.ntokia.com/sitemap.xml">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="icon" type="image/png" href="images/favicon-16x16.png">
@@ -30,88 +31,93 @@
   <link rel="android-chrome" href="images/android-chrome-192x192.png">
   <link rel="android-chrome" href="images/android-chrome-512x512.png">
   <link rel="shortcut icon" href="images/favicon.ico">
+
   <title>NTOKIA - Service de confiance</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <!-- Service Worker Registration -->
   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => console.log('Service Worker registered:', reg))
-        .catch(err => console.error('Service Worker registration failed:', err));
-    });
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://ntokia.netlify.app/#organization",
-        "name": "NTOKIA Web Agency",
-        "url": "https://ntokia.netlify.app",
-        "logo": "https://ntokia.netlify.app/images/NTOKIA.png",
-        "sameAs": [
-          "https://www.facebook.com/profile.php?id=61581259742935",
-          "https://www.linkedin.com/in/yourprofile",
-          "https://twitter.com/yourhandle",
-          "https://github.com/yourusername"
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+216 24 657 692",
-            "contactType": "Customer Service",
-            "areaServed": "TN"
-          }
-        ],
-        "description": "NTOKIA is a modern web agency focused on building smart, responsive websites and digital solutions for businesses.",
-        "founder": "Your Name",
-        "foundingDate": "2025-10-01",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tunisia",
-          "addressCountry": "TN"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://ntokia.netlify.app/#website",
-        "url": "https://ntokia.netlify.app",
-        "name": "NTOKIA Web Agency",
-        "publisher": {
-          "@id": "https://ntokia.netlify.app/#organization"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://ntokia.netlify.app/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://ntokia.netlify.app/#localbusiness",
-        "name": "NTOKIA Web Agency",
-        "image": "https://ntokia.netlify.app/images/NTOKIA.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "10 rue Ibn Toufail, Megrine",
-          "addressLocality": "Tunis",
-          "addressRegion": "Ben Arous",
-          "postalCode": "2034",
-          "addressCountry": "TN"
-        },
-        "telephone": "+216 24 657 692",
-        "priceRange": "$$",
-        "url": "https://ntokia.netlify.app"
-      }
-    ]
-  }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registered:', reg))
+          .catch(err => console.error('Service Worker registration failed:', err));
+      });
+    }
   </script>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ntokia.netlify.app/#organization",
+          "name": "NTOKIA Web Agency",
+          "url": "https://ntokia.netlify.app",
+          "logo": "https://ntokia.netlify.app/images/NTOKIA.png",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61581259742935",
+            "https://www.linkedin.com/in/yourprofile",
+            "https://twitter.com/yourhandle",
+            "https://github.com/yourusername"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+216 24 657 692",
+              "contactType": "Customer Service",
+              "areaServed": "TN"
+            }
+          ],
+          "description": "NTOKIA is a modern web agency focused on building smart, responsive websites and digital solutions for businesses.",
+          "founder": "Your Name",
+          "foundingDate": "2025-10-01",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tunisia",
+            "addressCountry": "TN"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ntokia.netlify.app/#website",
+          "url": "https://ntokia.netlify.app",
+          "name": "NTOKIA Web Agency",
+          "publisher": {
+            "@id": "https://ntokia.netlify.app/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ntokia.netlify.app/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://ntokia.netlify.app/#localbusiness",
+          "name": "NTOKIA Web Agency",
+          "image": "https://ntokia.netlify.app/images/NTOKIA.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "10 rue Ibn Toufail, Megrine",
+            "addressLocality": "Tunis",
+            "addressRegion": "Ben Arous",
+            "postalCode": "2034",
+            "addressCountry": "TN"
+          },
+          "telephone": "+216 24 657 692",
+          "priceRange": "$$",
+          "url": "https://ntokia.netlify.app"
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand">
@@ -121,7 +127,6 @@
           <p class="tagline">Let's build a better future</p>
         </div>
       </a>
-
       <nav class="nav">
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
         <ul class="nav-list" id="mainNav">
@@ -555,11 +560,11 @@
 
   </main>
 
-   <footer class="site-footer reveal">
+  <!-- Footer -->
+  <footer class="site-footer reveal">
     <div class="container footer-inner">
-        <p>© <span id="year"></span> NTOKIA — Tous droits réservés.</p>
-
-        <div class="footer-socials">
+      <p>© <span id="year"></span> NTOKIA — Tous droits réservés.</p>
+      <div class="footer-socials">
         <!-- Facebook -->
         <a href="https://www.facebook.com/profile.php?id=61581259742935" target="_blank" aria-label="Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -580,11 +585,9 @@
             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .386.044.763.128 1.124-4.09-.205-7.72-2.166-10.15-5.144-.424.728-.666 1.574-.666 2.475 0 1.708.869 3.216 2.188 4.099-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.697 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.317 0-.626-.03-.927-.086.627 1.956 2.444 3.377 4.599 3.417-1.68 1.316-3.809 2.103-6.115 2.103-.398 0-.79-.023-1.175-.068 2.179 1.397 4.768 2.212 7.557 2.212 9.054 0 14.01-7.506 14.01-14.01 0-.213-.005-.426-.014-.637.961-.695 1.797-1.562 2.457-2.549z"/>
             </svg>
         </a>
-        </div>
-
-        <a href="#top" class="muted-link">Retour en haut ↑</a>
+      </div>
+      <a href="#top" class="muted-link">Retour en haut ↑</a>
     </div>
- </footer>
-
+  </footer>
 </body>
 </html>
